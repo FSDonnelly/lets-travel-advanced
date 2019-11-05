@@ -1,0 +1,23 @@
+{
+  "name": "lets-travel-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FSDonnelly/lets-travel-advanced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FSDonnelly/lets-travel-advanced/issues"
+  },
+  "homepage": "https://github.com/FSDonnelly/lets-travel-advanced#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
