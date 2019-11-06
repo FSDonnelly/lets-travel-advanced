@@ -46,3 +46,11 @@ footer .row {
 .w5 {
   width: 5%;
 }
+
+.articles {
+  margin-top: 15px;
+}
+
+.article-inline:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.3);
+}
