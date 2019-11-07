@@ -11,17 +11,10 @@ let PORT = process.env.PORT || 3000;
 
 let Post = require('./models/posts').Post;
 
-let post1 = new Post({
-  id: 2,
-  title: `Statue of Liberty`,
-  date: new Date(),
-  description: `Some description`,
-  text: `Some Text`,
-  country: `USA`,
-  imageURL: `/images/2.jpg`
+app.get(`/posts`, async (req, res) => {
+  let posts = await Post.find();
+  res.send(posts);
 });
-
-post1.save();
 
 app.use(express.static('public'));
 app.use(express.json());
