@@ -160,6 +160,50 @@
                     aria-labelledby="v-pills-create-post-tab"
                   >
                     <h2>Create Post</h2>
+                    <form>
+                      <div class="form-group">
+                        <label for="create-title">Title</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="create-title"
+                          placeholder="Title"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="create-country">Country</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="create-country"
+                          placeholder="Country"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="create-image-url">Image</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="create-image-url"
+                          placeholder="URL"
+                        />
+                        <p>or</p>
+                        <input
+                          type="file"
+                          class="form-control-file form-control"
+                          id="create-image-file"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="create-text">Text</label>
+                        <textarea
+                          class="form-control"
+                          id="create-text"
+                          rows="5"
+                        ></textarea>
+                      </div>
+                      <button class="btn btn-primary">Create Post</button>
+                    </form>
                   </div>
                 </div>
               </div>
