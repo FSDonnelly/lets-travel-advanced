@@ -4,7 +4,10 @@ let Schema = mongoose.Schema;
 let postSchema = new Schema({
   id: Number,
   title: String,
-  date: String,
+  date: {
+    type: Date,
+    default: Date.now
+  },
   description: String,
   text: String,
   country: String,

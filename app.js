@@ -42,7 +42,7 @@ app.post(`/posts`, async (req, res) => {
   let newPost = new Post({
     id: id++,
     title: reqBody.title,
-    date: new Date(),
+    // date: new Date(),
     description: reqBody.description,
     text: reqBody.text,
     country: reqBody.country,
