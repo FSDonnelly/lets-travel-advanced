@@ -23,3 +23,19 @@ createForm.addEventListener('submit', e => {
     .then(res => res.text())
     .then(data => window.history.go());
 });
+
+disableInput = (input1, input2) => {
+  if (input1.value) {
+    input2.disabled = true;
+  } else {
+    input2.disabled = false;
+  }
+};
+
+createImageUrl.addEventListener('change', function() {
+  disableInput(this, createImageFile);
+});
+
+createImageFile.addEventListener('change', function() {
+  disableInput(this, createImageUrl);
+});
