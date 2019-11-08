@@ -1,14 +1,21 @@
 let express = require('express');
 let app = express();
 let mongoose = require('mongoose');
+let multer = require('multer');
 
 mongoose.connect('mongodb://localhost/travels', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
+let imageStorage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'public/images'),
+  filename: (req, file, cb) => cb(null, file.originalname)
+});
+
 app.use(express.static('public'));
 app.use(express.json());
+app.use(multer({ storage: imageStorage }).single('imageFile'));
 
 let PORT = process.env.PORT || 3000;
 
@@ -31,7 +38,8 @@ app.post(`/posts`, async (req, res) => {
     country: reqBody.country,
     imageURL: reqBody.imageUrl
   });
-  await newPost.save();
+  console.log(req.file);
+  // await newPost.save();
   res.send('Created');
 });
 
