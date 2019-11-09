@@ -10,6 +10,12 @@ router.get(`/`, async (req, res) => {
   res.send(posts);
 });
 
+router.get(`/:id`, async (req, res) => {
+  let id = req.params.id;
+  let post = await Post.findOne({ id });
+  res.send(post);
+});
+
 router.post(`/`, async (req, res) => {
   let reqBody = req.body;
   let imgPath;
@@ -21,12 +27,6 @@ router.post(`/`, async (req, res) => {
       req.file.path.length
     );
   }
-
-  router.delete('/:id', async (req, res) => {
-    let id = req.params.id;
-    await Post.deleteOne({ id });
-    res.send('Deleted!');
-  });
 
   let newPost = new Post({
     id: uuid(),
@@ -40,6 +40,18 @@ router.post(`/`, async (req, res) => {
 
   await newPost.save();
   res.send('Created');
+});
+
+router.delete('/:id', async (req, res) => {
+  let id = req.params.id;
+  await Post.deleteOne({ id });
+  res.send('Deleted!');
+});
+
+router.put('/:id', async (req, res) => {
+  let id = req.params.id;
+  await Post.updateOne({ id }, req.body);
+  res.send('Updated');
 });
 
 module.exports = router;
