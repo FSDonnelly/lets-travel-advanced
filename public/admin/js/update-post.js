@@ -35,7 +35,11 @@
       },
       body: JSON.stringify({
         title: titleInp.value,
-        text: textArea.value
+        text: textArea.value,
+        description: textArea.value.substring(
+          0,
+          textArea.value.indexOf('.') + 1
+        )
       })
     })
       .then(res => res.text())
