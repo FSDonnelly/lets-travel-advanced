@@ -205,6 +205,59 @@
                       <button class="btn btn-primary">Create Post</button>
                     </form>
                   </div>
+                  <!-- Update Form -->
+                  <div
+                    class="tab-pane fade"
+                    id="v-pills-update-post"
+                    role="tabpanel"
+                    aria-labelledby="v-pills-update-post-tab"
+                  >
+                    <h2>Update Post</h2>
+                    <form class="update-post-form">
+                      <div class="form-group">
+                        <label for="update-title">Title</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="update-title"
+                          placeholder="Title"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="update-country">Country</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="update-country"
+                          placeholder="Country"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="update-image-url">Image</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="update-image-url"
+                          placeholder="URL"
+                        />
+                        <p>or</p>
+                        <input
+                          type="file"
+                          class="form-control-file form-control"
+                          id="update-image-file"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="update-text">Text</label>
+                        <textarea
+                          class="form-control"
+                          id="update-text"
+                          rows="5"
+                        ></textarea>
+                      </div>
+                      <button class="btn btn-primary">Update Post</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -216,6 +269,7 @@
     <script src="../js/posts.js"></script>
     <script src="js/create-post.js"></script>
     <script src="js/delete-post.js"></script>
+    <script src="js/update-post.js"></script>
     <script src="js/main.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
