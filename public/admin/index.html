@@ -58,7 +58,10 @@
             <form class="form-inline my-2 my-lg-0">
               <input
                 class="form-control mr-sm-2"
-                type="search"
+                id="phonenum"
+                type="tel"
+                pattern="^\d{11}$"
+                required
                 placeholder="Phone Number"
                 aria-label="Search"
               />
@@ -146,7 +149,7 @@
                     Mails content...
                   </div>
                   <div
-                    class="tab-pane fade"
+                    class="tab-pane fade callbacks"
                     id="v-pills-callback"
                     role="tabpanel"
                     aria-labelledby="v-pills-callback-tab"
@@ -246,6 +249,7 @@
     <script src="js/create-post.js"></script>
     <script src="js/delete-post.js"></script>
     <script src="js/update-post.js"></script>
+    <script src="js/callback-requests.js"></script>
     <script src="js/main.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

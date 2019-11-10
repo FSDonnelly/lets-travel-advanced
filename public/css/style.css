@@ -31,6 +31,10 @@ footer .row {
   padding: 15px;
 }
 
+.w60 {
+  width: 60%;
+}
+
 .w30 {
   width: 30%;
 }

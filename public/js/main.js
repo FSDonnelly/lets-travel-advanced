@@ -1,3 +1,5 @@
+let callMeForm = document.querySelector('.call-me-form');
+
 document.addEventListener('DOMContentLoaded', async () => {
   let posts = await getPosts();
   let articles = document.querySelector('.articles');
@@ -21,4 +23,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>`;
     articles.insertAdjacentHTML('beforeend', postHTML);
   });
+});
+
+callMeForm.addEventListener('submit', e => {
+  let phoneInp = callMeForm.querySelector('input');
+  e.preventDefault();
+  fetch(`http://localhost:3000/callbacks`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      phoneNumber: phoneInp.value
+    })
+  })
+    .then(res => res.text())
+    .then(() => alert(`We will call you back ASAP!!`));
 });
