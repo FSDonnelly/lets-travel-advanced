@@ -3,6 +3,7 @@ let addPostBtn = document.querySelector(`.create-post-btn`);
 document.addEventListener('DOMContentLoaded', async () => {
   addPost();
   addCallbackRequest();
+  addEmails();
 });
 
 addPostBtn.addEventListener('click', () => {
@@ -58,5 +59,29 @@ addCallbackRequest = async () => {
                         </div>
                       </article>`;
     cbRequests.insertAdjacentHTML('beforeend', callbackHTML);
+  });
+};
+
+addEmails = async () => {
+  let emails = await getEmails();
+  let emailsRequests = document.querySelector('#v-pills-mails');
+  emailsRequests.innerHTML = '';
+  let i = 1;
+  emails.forEach(email => {
+    let emailHTML = `<article
+                        class="d-flex justify-content-between align-items-center article-inline"
+                      >
+                        <div class="num w5">${i++}</div>
+                        <input class='id' type='hidden' value='${email.id}'>
+                        <div class="name w30">${email.name}</div>
+                        <div class="email w30">${email.email}</div>
+                    
+                        <div class="date w30">${email.date}</div>
+                        <div class="remove w5">
+                          <button class="btn btn-link btn-remove">X</button>
+                        </div>
+                            <div class="text w100">${email.text}</div>
+                      </article>`;
+    emailsRequests.insertAdjacentHTML('beforeend', emailHTML);
   });
 };

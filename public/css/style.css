@@ -31,6 +31,10 @@ footer .row {
   padding: 15px;
 }
 
+.w100 {
+  width: 100%;
+}
+
 .w60 {
   width: 60%;
 }
@@ -57,6 +61,7 @@ footer .row {
 
 .article-inline {
   padding-left: 10px;
+  flex-wrap: wrap;
 }
 
 .article-inline:nth-of-type(odd) {
