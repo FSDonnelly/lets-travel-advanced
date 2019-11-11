@@ -181,7 +181,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form action="">
+            <form class="email-request-form">
               <div class="form-group">
                 <label for="name">Your Name</label>
                 <input
@@ -213,7 +213,7 @@
                   rows="3"
                 ></textarea>
               </div>
-              <input type="submit" value="Submit" class="btn btn-primary" />
+              <input type="submit" value="Submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" />
             </form>
           </div>
         </div>
@@ -241,6 +241,7 @@
     </footer>
     <!-- Optional JavaScript -->
     <script src="js/posts.js"></script>
+    <script src="js/emails.js"></script>
     <script src="js/main.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
