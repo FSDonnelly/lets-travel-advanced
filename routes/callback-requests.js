@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   res.send(cbs);
 });
 
-router.put('/', async (req, res) => {
+router.post('/', async (req, res) => {
   let newCallback = new CallbackRequest({
     id: uuid(),
     phoneNumber: req.body.phoneNumber,

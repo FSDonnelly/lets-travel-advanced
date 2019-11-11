@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 callMeForm.addEventListener('submit', e => {
-  let phoneInp = callMeForm.querySelector('input');
   e.preventDefault();
+  let phoneInp = callMeForm.querySelector('input');
+
   fetch(`http://localhost:3000/callbacks`, {
     method: 'POST',
     headers: {

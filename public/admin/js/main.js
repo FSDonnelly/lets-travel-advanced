@@ -42,7 +42,7 @@ addPost = async () => {
 
 addCallbackRequest = async () => {
   let callbacks = await getCallbacks();
-  let cbRequests = document.querySelector('.callbacks');
+  let cbRequests = document.querySelector('#v-pills-callback');
   cbRequests.innerHTML = '';
   let i = 1;
   callbacks.forEach(callback => {
