@@ -87,3 +87,7 @@ footer .row {
 .sight-container .date {
   font-weight: bold;
 }
+
+.map {
+  height: 400px;
+}
