@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                   <p class="card-text">
                     ${post.description}
                   </p>
-                  <button class="btn btn-primary">Details</button>
+                  <a href="/sight" class="btn btn-primary">Details</a>
                 </div>
               </div>
             </div>`;
