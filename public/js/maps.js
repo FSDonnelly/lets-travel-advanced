@@ -31,7 +31,11 @@ function showMap(result) {
       center: { lat: location.latitude, lng: location.longitude }
     }
   );
-
+  let marker = new H.map.Marker({
+    lat: location.latitude,
+    lng: location.longitude
+  });
+  map.addObject(marker);
   let ui = H.ui.UI.createDefault(map, defaultLayers);
 }
 
