@@ -8,11 +8,7 @@ let platform = new H.service.Platform({
 let defaultLayers = platform.createDefaultLayers();
 
 // Instantiate (and display) a map object:
-let map = new H.Map(
-  document.querySelector(".map"),
-  defaultLayers.vector.normal.map,
-  {
-    zoom: 10,
-    center: { lat: 51.500876, lng: -0.124647 }
-  }
-);
+let map = new H.Map(document.querySelector(".map"), defaultLayers.normal.map, {
+  zoom: 10,
+  center: { lat: 51.500876, lng: -0.124647 }
+});
