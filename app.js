@@ -6,6 +6,7 @@ let multer = require("multer");
 let postsRouter = require("./routes/posts");
 let callbacksRouter = require("./routes/callback-requests");
 let emailsRouter = require("./routes/emails");
+let usersRouter = require("./routes/users");
 let Post = require("./models/posts").Post;
 
 app.set("view engine", "ejs");
@@ -29,6 +30,7 @@ app.use(express.static("public"));
 app.use("/posts", postsRouter);
 app.use("/callbacks", callbacksRouter);
 app.use("/emails", emailsRouter);
+app.use("/users", usersRouter);
 
 app.get("/sight", async (req, res) => {
   let id = req.query.id;
