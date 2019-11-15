@@ -3,6 +3,7 @@ let router = express.Router();
 let bcrypt = require("bcrypt");
 
 let User = require("../models/users").User;
+let auth = require("../controllers/auth");
 
 router.post("/login", async (req, res) => {
   let email = req.body.email;
@@ -11,11 +12,17 @@ router.post("/login", async (req, res) => {
   if (user.length > 0) {
     let comparePassword = await bcrypt.compare(password, user[0].password);
     if (comparePassword) {
-      res.send("Logged In");
+      let token = auth.generateToken(user[0]);
+      res.cookie("auth_token", token);
+      res.send({
+        redirectURL: "/admin"
+      });
     } else {
+      res.status(400);
       res.send("Rejected");
     }
   } else {
+    res.status(400);
     res.send("Rejected");
   }
 });
