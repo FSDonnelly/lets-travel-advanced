@@ -1,16 +1,16 @@
-let emailRequestForm = document.querySelector('.email-request-form');
+let emailRequestForm = document.querySelector(".email-request-form");
 
-emailRequestForm.addEventListener('submit', async e => {
+emailRequestForm.addEventListener("submit", async e => {
   e.preventDefault();
-  fetch('http://localhost:3000/emails', {
-    method: 'POST',
+  fetch("/emails", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      name: document.querySelector('#name').value,
-      email: document.querySelector('#email').value,
-      text: document.querySelector('#message').value
+      name: document.querySelector("#name").value,
+      email: document.querySelector("#email").value,
+      text: document.querySelector("#message").value
     })
   })
     .then(res => res.text())

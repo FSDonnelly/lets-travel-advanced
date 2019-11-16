@@ -29,7 +29,7 @@ callMeForm.addEventListener("submit", e => {
   e.preventDefault();
   let phoneInp = callMeForm.querySelector("input");
 
-  fetch(`http://localhost:3000/callbacks`, {
+  fetch(`/callbacks`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
