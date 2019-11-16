@@ -1,9 +1,9 @@
-let callMeForm = document.querySelector('.call-me-form');
+let callMeForm = document.querySelector(".call-me-form");
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   let posts = await getPosts();
-  let articles = document.querySelector('.articles');
-  articles.innerHTML = '';
+  let articles = document.querySelector(".articles");
+  articles.innerHTML = "";
   posts.forEach(post => {
     let postHTML = `<div class="col-4">
               <div class="card">
@@ -21,18 +21,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
               </div>
             </div>`;
-    articles.insertAdjacentHTML('beforeend', postHTML);
+    articles.insertAdjacentHTML("beforeend", postHTML);
   });
 });
 
-callMeForm.addEventListener('submit', e => {
+callMeForm.addEventListener("submit", e => {
   e.preventDefault();
-  let phoneInp = callMeForm.querySelector('input');
+  let phoneInp = callMeForm.querySelector("input");
 
   fetch(`http://localhost:3000/callbacks`, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({
       phoneNumber: phoneInp.value

@@ -13,10 +13,15 @@ let auth = require("./controllers/auth");
 
 app.set("view engine", "ejs");
 
-mongoose.connect("mongodb://localhost/travels", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+let password = process.env.MONGO_PW;
+
+mongoose.connect(
+  `mongodb+srv://FSDdbUser:${password}@mycluster-wcgfi.mongodb.net/travels`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 
 let imageStorage = multer.diskStorage({
   destination: (req, file, cb) => cb(null, "public/images"),
