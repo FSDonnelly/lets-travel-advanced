@@ -6,7 +6,7 @@ signInForm.addEventListener("submit", e => {
   let email = document.getElementById("sign-in-email").value;
   let password = document.getElementById("sign-in-password").value;
 
-  fetch(`/login`, {
+  fetch(`/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -36,7 +36,7 @@ registerForm.addEventListener("submit", e => {
     return alert("Passwords do not match");
   }
 
-  fetch(`/register`, {
+  fetch(`/users/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
