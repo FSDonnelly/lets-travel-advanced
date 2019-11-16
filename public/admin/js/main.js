@@ -1,25 +1,26 @@
 let addPostBtn = document.querySelector(`.create-post-btn`);
+let logOutBtn = document.querySelector(".log-out-btn");
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   addPost();
   addCallbackRequest();
   addEmails();
 });
 
-addPostBtn.addEventListener('click', () => {
-  let articlesTab = document.getElementById('v-pills-articles');
-  articlesTab.classList.remove('show');
-  articlesTab.classList.remove('active');
+addPostBtn.addEventListener("click", () => {
+  let articlesTab = document.getElementById("v-pills-articles");
+  articlesTab.classList.remove("show");
+  articlesTab.classList.remove("active");
 
-  let createTab = document.getElementById('v-pills-create-post');
-  createTab.classList.add('show');
-  createTab.classList.add('active');
+  let createTab = document.getElementById("v-pills-create-post");
+  createTab.classList.add("show");
+  createTab.classList.add("active");
 });
 
 addPost = async () => {
   let posts = await getPosts();
-  let articles = document.querySelector('.articles');
-  articles.innerHTML = '';
+  let articles = document.querySelector(".articles");
+  articles.innerHTML = "";
   let i = 1;
   posts.forEach(post => {
     let postHTML = `<article
@@ -37,14 +38,14 @@ addPost = async () => {
                           <button class="btn btn-link btn-remove">X</button>
                         </div>
                       </article>`;
-    articles.insertAdjacentHTML('beforeend', postHTML);
+    articles.insertAdjacentHTML("beforeend", postHTML);
   });
 };
 
 addCallbackRequest = async () => {
   let callbacks = await getCallbacks();
-  let cbRequests = document.querySelector('#v-pills-callback');
-  cbRequests.innerHTML = '';
+  let cbRequests = document.querySelector("#v-pills-callback");
+  cbRequests.innerHTML = "";
   let i = 1;
   callbacks.forEach(callback => {
     let callbackHTML = `<article
@@ -58,14 +59,14 @@ addCallbackRequest = async () => {
                           <button class="btn btn-link btn-remove">X</button>
                         </div>
                       </article>`;
-    cbRequests.insertAdjacentHTML('beforeend', callbackHTML);
+    cbRequests.insertAdjacentHTML("beforeend", callbackHTML);
   });
 };
 
 addEmails = async () => {
   let emails = await getEmails();
-  let emailsRequests = document.querySelector('#v-pills-mails');
-  emailsRequests.innerHTML = '';
+  let emailsRequests = document.querySelector("#v-pills-mails");
+  emailsRequests.innerHTML = "";
   let i = 1;
   emails.forEach(email => {
     let emailHTML = `<article
@@ -82,6 +83,15 @@ addEmails = async () => {
                         </div>
                             <div class="text w100">${email.text}</div>
                       </article>`;
-    emailsRequests.insertAdjacentHTML('beforeend', emailHTML);
+    emailsRequests.insertAdjacentHTML("beforeend", emailHTML);
   });
 };
+
+logOutBtn.addEventListener("click", () => {
+  document.cookie.split(";").forEach(function(c) {
+    document.cookie = c
+      .replace(/^ +/, "")
+      .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+  });
+  window.location.href = "/";
+});
